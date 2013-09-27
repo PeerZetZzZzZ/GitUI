@@ -1,0 +1,113 @@
+<html>
+<body bgcolor="white">
+<b>1.General.</b><br/>
+GitUi allows you to communicate with Git program via user interface. It allows you to use basic Git functions. <br/>
+Every more complicated options or operations can be done by console. <br/>
+<br/>
+
+GitUi will not work if Git isn't installed on the computer what means that it will nott give you access to any function.<br/>
+<br/>
+The check is made on every turn on of GitUi.<br/>
+<br/>
+The main window of GitUi includes main browser, where the results from Git will be shown. There are also three buttons which allow<br/>
+get fast access to basic function of git such as "git status", "git log", "git commit". <br/>
+The most important is the task bar, where appropriate options can be choosed.<br/>
+<br/>
+<b>2.Repositories actions.</b><br/>
+<br/>
+After opening the GitUi user should open the git repository on which he is going to work with. <br/>
+GitUi allows to remember one repository what sets free user to open repository every time he works with the same repository.<br/>
+(for more information go to section UserSettings).<br/>
+Repository can be opened by selecting Repository->Open. Only folders ".git" will be accpeted by validated path.<br/>
+<br/>
+If there is no repository for open, user can create new repository using Repository->Create. <br/>
+Important: GitUi won't recognize if user has rights to save files in the selected path. User must know if he is allowed to create folder<br/>
+in selected place!<br/>
+<br/>
+If user does not need the repository, GitUi allow to delete repository by selecting Repository->Delete. Only ".git" folders can be deleted.<br/>
+<br/>
+After opening repository, user has access to rest of GitUi options if all condition are done ( such as first commit - see section 'Adding Files. Commits').<br/>
+<br/>
+<b>3.Adding files. Commits.</b><br/>
+<br/>
+This options allow user to add files which should be tracked down by git. GitUi allow to add multiple files. <br/>
+Important: user must know if he has rights to select the file. GitUi will not recognize if user has access - if not, files will not be tracked by git.<br/>
+<br/>
+After selecting files ( by marking the area ), user can click "Add" button to add selected files. After that operation, the files are already tracked<br/>
+down by git. In this place user can also make commit, by easy clicking "Commit" button. This opens the selected text editor, which allow to<br/> 
+insert informations about commit.<br/>
+<br/>
+Important: It is very possible that default text editor is only console editor, what means that user must specify his editor which will not be<br/>
+a program running in the bash. Unfortunatelly GitUi does not support working editor ( such as for example Vim ) in the window of GitUi.<br/>
+This options can be set manually ( using correct options by correct git option in bash ) or in the GitUi ( see section 'User Settings' ).<br/>
+<br/>
+<b>4.Branches and Merging.</b><br/>
+<br/>
+This option allow user to create branches, making checkout or merging. In the window user can see main browser, which includes forward from git.<br/>
+After opening the window user can see branches in his repository, including the main on which he actually is now.<br/>
+The window includes 2 combo boxes, which are:<br/>
+1. The branch on which user actually is.<br/>
+2. The branches which can be deleted, or with which user can merge.<br/>
+<br/>
+GitUi allows to delete branches, by just selecting correct branch in the second combo box ( which includes branches which can be deleted or with which main<br/>
+branch can merge ) and clicking the appropriate button.<br/>
+If user wants to add or delete branches - the radio button 'Modify branches' must be clicked. After that all options will be showed.<br/>
+User can click on 'Delete selected branch:' button to delete branch, 'Merge' to merge with that branch.<br/>
+In the line edit area, the name of branch which should be added to git can be inserted. After that clicking 'Add branch' will add branch of selected<br/>
+name to the git. Name can not include 'space' character.<br/>
+<br/>
+In this place user can also checkout to hash code of the commit, what actually is not correct operation but sometimes it must be done.<br/>
+In the line edit hash of the commit should be inserted, and after clicking 'Checkout' button, the checkout will be done.<br/>
+<br/>
+<b>5.Remote.</b><br/>
+<br/>
+GitUi allows user to make basic operation related with connecting remote repositories, uplodading, downloading changed and repositories.<br/>
+<br/>    
+    'Remote->Modify Tracked Repositories' allow to open window where user can mainly add and delete remote repositories.<br/>
+Clicking 'Remote' button will show all remote repositories added to git.<br/> 
+In the line edit named 'Name' - the name of repository can be inserted. In the second line edit - URL address of the repository can be inserted.<br/>
+The repository can be added after clicking 'Add repo' button. The name or URL can not contain 'space' character.<br/>
+The repository can be also easily deleted by just easy clicking 'Delete' button - the repository of name which actually is shown in the combo box will be <br/>
+deleted.<br/>
+<br/>    
+    'Remote->Clone' has implemented options allowing user to clone repository into the new repository. URL of repository which will be cloned into the new <br/>
+one should be inserted in 'URL' line. Also user must specify the path, where the new repository will be saved.<br/> 
+<br/>
+Important: User must know if he has access to save files in selected path. GitUI will not recognize any user rights.<br/>
+<br/>
+User can insert the name of folder, which will be named of chosen name and where cloned ".git" folder will be save.<br/>
+Default name of the folder will be the name of cloned repository, what means that in selected path will be created folder of the chosen by user or default<br/>
+name and in this folder ".git" folder will be initialized.<br/>
+<br/>    
+    'Remote->Push/Pull' option allow user to push to the repository and pull from the repository.<br/>
+The name of remote repository must be selected in first 'Select tracked repository' combo box, the name of branch must be specified in the second<br/>
+'Select branch to push/pull' combo box. After clicking 'Push' button the changes commited with selected branch will be pushed to the selected repository.<br/>
+If the operation will fail, the appropriate communicate will be shown in the browser.<br/>
+<br/>
+Clicking 'Pull' button will fetch the changes from the selected remote repository to the local repository and automatically merge it with local branches.<br/>
+<br/>
+Important: to make Pull options work, the correct changes in the configuration file of git must be done.<br/>
+<br/>  
+  'Remote->Fetch' allows to fetch data from the selected remote repository. After clicking 'Fetch' button, the data will be fetched into local repository.<br/>
+After that user can merge changes from remote repository to the local, after selecting correct branches in 'Local branches' combo box and<br/> 
+'Remotes branches' combo box. Clicking 'Merge' button will merge changes from the remote repository with local repository.<br/> 
+<br/>
+If the operation fails or something is not right, the appropriate information will be showed in the browser.<br/>
+<br/>
+<b>6.User settings.</b><br/>
+<br/>
+    'User->Settings' option will open window where user can specify basic options connected with the git, and GitUI.<br/>
+If the repository is currently open user has access to these options in other case, the repository should be opened or created if there is such need.<br/>
+<br/>
+Developer information' includes 2 lines where first one  is the line where user can insert the name of user whose the repository is and<br/>
+the second line contains the user e-mail address. These informations are connected with git options and can be also set by git commands.<br/>
+<br/>
+'Other settings' line specify the default text editor which will be used by git ( it is necessary to make commits ).<br/>
+User can paste there the name of editor, which will be used. It is also git option and can be specified by bash command.<br/>
+<br/>
+Important: the editor must be installed in the system, it is obvious ;)<br/>
+<br/>
+Last option allow user to specify the repository on which he is currently work on and which will be opened by GitUI automatically after start.<br/>
+The line edit includes the name of currently opened repository and this repository can be set as default by clicking 'Set repo'. If user does not<br/>
+want any repository to be set, 'Clear' button must be clicked. After that no repository will be opened by default.<br/>
+</body><br/></html>
